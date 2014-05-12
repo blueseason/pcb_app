@@ -1,14 +1,40 @@
 <!DOCTYPE html>
 <html>
-<head>
-  <title>PcbApp</title>
-  <%= stylesheet_link_tag    "application", media: "all", "data-turbolinks-track" => true %>
-  <%= javascript_include_tag "application", "data-turbolinks-track" => true %>
-  <%= csrf_meta_tags %>
-</head>
-<body>
+  <head>
+    <title>广东青阳科技 | <%= yield(:title) %></title>
+    <%= stylesheet_link_tag    "application", media: "all", "data-turbolinks-track" => true %>
+    <%= javascript_include_tag "application", "data-turbolinks-track" => true %>
+    <%= csrf_meta_tags %>
 
-<%= yield %>
+    <!-- Bootstrap core CSS -->
+    <!--%= stylesheet_link_tag "bootstrap", "justified-nav", media: "all",
+        "data-turbolinks-track" => true %-->
+    <nav>
+      <div class="navbar navbar-inverse hidden-phone">
+        <div class="navbar-inner">
+          <div class="container">
+            <ul class="nav f-9">
+              <li><a href="/"><i class="icon-home icon-white"> </i></a></li>
+              <li><a href="#">登录</a></li>
+              <li><a href="#" class="torange">注册</a></li>
+            </ul>
+          </div>
+        </div>
+      </div>
+    </nav>
 
-</body>
+  </head>
+  <body>
+    <div class="container">
+
+      <%= yield %>
+
+      <!-- Site footer -->
+      <div class="footer">
+        <p>&copy; 青阳科技 2014</p>
+      </div>
+
+    </div> <!-- /container -->
+
+  </body>
 </html>
