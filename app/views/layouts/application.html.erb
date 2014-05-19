@@ -16,7 +16,7 @@
             <ul class="nav f-9">
               <li><a href="/"><i class="icon-home icon-white"> </i></a></li>
               <li><a href="#">登录</a></li>
-              <li><a href="#" class="torange">注册</a></li>
+              <li><a href="/signup" class="torange">注册</a></li>
             </ul>
           </div>
         </div>
@@ -26,7 +26,9 @@
   </head>
   <body>
     <div class="container">
-
+      <% flash.each do |key, value| %>
+      <%= content_tag(:div, value, class: "alert alert-#{key}") %>
+      <% end %>
       <%= yield %>
 
       <!-- Site footer -->
@@ -35,6 +37,6 @@
       </div>
 
     </div> <!-- /container -->
-
+    <%= debug(params) if Rails.env.development? %>
   </body>
 </html>
