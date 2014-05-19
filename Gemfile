@@ -6,7 +6,8 @@ gem 'rails', '4.0.4'
 gem 'bootstrap-sass','3.1.1'
 gem 'sprockets', '2.11.0'
 gem 'bcrypt-ruby'
-gem 'bootstrap_form'
+gem 'rails-i18n'
+gem 'simple_form'
 
 group :development, :test do
   gem 'sqlite3', '1.3.8'
