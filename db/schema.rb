@@ -20,6 +20,7 @@ ActiveRecord::Schema.define(version: 20140517153513) do
     t.datetime "created_at"
     t.datetime "updated_at"
     t.string   "password_digest"
+    t.string   "real_name"
     t.string   "qq"
     t.string   "company_name"
     t.string   "phone"

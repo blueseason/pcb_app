@@ -12,6 +12,7 @@ describe User do
   it { should respond_to(:email) }
   it { should respond_to(:mobile) }
   it { should respond_to(:password_digest) }
+  it { should respond_to(:real_name) }
   it { should respond_to(:qq) }
   it { should respond_to(:company_name) }
   it { should respond_to(:phone) }

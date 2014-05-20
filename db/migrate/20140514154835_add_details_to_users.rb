@@ -1,6 +1,7 @@
 class AddDetailsToUsers < ActiveRecord::Migration
   def change
     add_column :users, :password_digest, :string
+    add_column :users, :real_name, :string
     add_column :users, :qq, :string
     add_column :users, :company_name, :string
     add_column :users, :phone, :string
