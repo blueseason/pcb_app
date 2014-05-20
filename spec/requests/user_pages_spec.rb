@@ -6,8 +6,8 @@ describe "User Pages" do
   describe "signup page" do
     before { visit signup_path }
 
-    it { should have_content('注册') }
-    it { should have_title(full_title('注册')) }
+    it { should have_content(I18n.t('signup')) }
+    it { should have_title(full_title(I18n.t('signup'))) }
   end
 
   describe "profile page" do
@@ -29,10 +29,10 @@ describe "User Pages" do
 
     describe "with valid information" do
       before do
-        fill_in "联系人",          with: "李先生"
-        fill_in "邮箱地址",        with: "li@example.com"
-        fill_in "密码",            with: "foobar"
-        fill_in "确认密码",        with: "foobar"
+        fill_in I18n.t('simple_form.labels.signup.contactor'),              with: "李先生"
+        fill_in I18n.t('simple_form.labels.signup.email'),                  with: "li@example.com"
+        fill_in I18n.t('simple_form.labels.signup.password'),               with: "foobar"
+        fill_in I18n.t('simple_form.labels.signup.password_confirmation'),  with: "foobar"
       end
 
       it "should create a user" do

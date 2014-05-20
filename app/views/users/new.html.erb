@@ -1,32 +1,42 @@
-<% provide(:title, '注册') %>
-<h1>注册</h1>
+<% provide(:title, t('signup')) %>
+<h1><%= yield :title %></h1>
 
-<div class="row">
-  <div class="col-xs-12 col-sm-6 col-sm-offset-3">
-    <%= simple_form_for(@user, layout: "horizontal" ) do |f| %>
-      <%= render 'shared/error_messages' %>
-      <%= f.input :email, label: t('simple_form.signup.email') %>
+<div class="col-md-6">
+  <div class="panel panel-info">
+    <div class="panel-heading">Bootstrap: <%= yield :title %></div>
+    <div class="panel-body">
+      <%= simple_form_for(@user, html: {  class: 'form-horizontal' }  ) do |f| %>
+        <%= render 'shared/error_messages' %>
 
-      <%= f.text_field :mobile, label: "手机号码", class: "required" %>
+        <%= f.input :email, label: t('simple_form.labels.signup.email'), placeholder:
+              t('simple_form.placeholders.signup.email') %>
 
-      <%= f.password_field :password, label: "密码", help: "Must be at least 6 characters long" %>
+        <%= f.input :mobile, label: t('simple_form.labels.signup.mobile'),
+            placeholder: t('simple_form.placeholders.signup.mobile'), input_html: { size: 50 } %>
 
-      <%= f.password_field :password_confirmation, label: "确认密码" %>
+        <%= f.input :password, label: t('simple_form.labels.signup.password'),
+              placeholder: t('simple_form.placeholders.signup.password'),
+              hint: t('simple_form.hints.signup.password') %>
 
-      <%= f.text_field :company_name, label: "公司名称" %>
+        <%= f.input :password_confirmation, label: t('simple_form.labels.signup.password_confirmation') %>
 
-      <%= f.text_field :name, label: "联系人" %>
+        <%= f.input :company_name, label: t('simple_form.labels.signup.company_name') %>
 
-      <%= f.text_field :qq, label: "QQ号码" %>
+        <%= f.input :name, label: t('simple_form.labels.signup.contactor'), placeholder:
+              t('simple_form.placeholders.signup.contactor') %>
 
-      <%= f.text_field :phone, label: "电话号码" %>
+        <%= f.input :qq, label: t('simple_form.labels.signup.qq')  %>
 
-      <%= f.text_field :fax, label: "传真号码" %>
+        <%= f.input :phone, label: t('simple_form.labels.signup.phone')  %>
 
-      <%= f.text_field :address, label: "收货地址" %>
+        <%= f.input :fax, label: t('simple_form.labels.signup.fax') %>
+
+        <%= f.input :address, label: t('simple_form.labels.signup.address') %>
+
+        <%= f.button :submit, t('simple_form.labels.signup.submit'), class: "btn btn-default btn-primary" %>
+      <% end %>
+    </div>
   </div>
-        <%= f.submit "立即注册", class: "btn btn-default btn-primary" %>
-    <% end %>
-
 </div>
+
 
