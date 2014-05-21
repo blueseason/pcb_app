@@ -12,6 +12,12 @@ zh-CN:
         contactor: 请填写真实姓名，作为下单联系人或收货人用
         address: 作为收货地址
     labels:
+      signin:
+        email: 邮箱地址
+        password: 登录密码
+        submit: 登录
+        not_have_account: 还没有注帐号？
+        ads: 马上注册
       signup:
         email: 邮箱地址
         mobile: 手机号码
