@@ -1,10 +1,16 @@
 <% provide(:title, t('signup')) %>
-<h1><%= yield :title %></h1>
-
-<div class="col-md-6">
-  <div class="panel panel-info">
-    <div class="panel-heading">Bootstrap: <%= yield :title %></div>
-    <div class="panel-body">
+<div class="panel panel-default">
+  <div class="panel-heading">
+    <h2 class="panel-title" ><%= yield :title %></h2>
+    <iframe id="tmp_downloadhelper_iframe" style="display: none;"></iframe>
+  </div>
+  <div class="panel-body">
+    <div class="row col-wrap">
+      <div class="col-md-4" id="guide"><h3><%= t('create_label') %></h3>
+        <p class="text-ignore"><%=  t('create_info') %> </p>
+        <ul class="list-unstyled"><li><a href="/signin">立即登录</a></li></ul></div>
+        <div class="col-md-8 " id="content">
+    <div class="panel-body col-md-7 col-md-offset-3">
       <%= simple_form_for(@user, html: {  class: 'form-horizontal' }  ) do |f| %>
         <%= render 'shared/error_messages' %>
 
@@ -33,7 +39,7 @@
 
         <%= f.input :address, label: t('simple_form.labels.signup.address') %>
 
-        <%= f.button :submit, t('simple_form.labels.signup.submit'), class: "btn btn-default btn-primary" %>
+        <%= f.button :submit, t('simple_form.labels.signup.submit'), class: "btn btn-default btn-primary col-md-3" %>
       <% end %>
     </div>
   </div>

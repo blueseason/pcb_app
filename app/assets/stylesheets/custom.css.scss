@@ -11,7 +11,7 @@ html {
 }
 
 body {
-  #padding-top: 60px;
+  padding-top: 60px;
 }
 
 section {
@@ -32,7 +32,7 @@ textarea {
 /* typography */
 
 h1, h2, h3, h4, h5, h6 {
-  line-height: 1;
+  line-height: 0.8;
 }
 
 h1 {
@@ -52,7 +52,7 @@ h2 {
 }
 
 p {
-  font-size: 1.1em;
+  font-size: 1.5em;
   line-height: 1.7em;
 }
 
@@ -61,7 +61,7 @@ p {
     -moz-border-radius: 0px 0px 0px 0px !important;
     -webkit-border-radius: 0px 0px 0px 0px !important;
     text-align:right !important;
-    #color:#FFFFFF;
+    color:#FFFFFF;
     #background-color: #FFFFFF;
 }
 
@@ -104,4 +104,129 @@ input, textarea, select, .uneditable-input {
 
 input {
   height: auto !important;
+}
+
+/* header */
+
+#logo {
+  float: left;
+  margin-right: 10px;
+  font-size: 1.7em;
+  color: white;
+  text-transform: uppercase;
+  letter-spacing: -1px;
+  padding-top: 9px;
+  font-weight: bold;
+  line-height: 1;
+  &:hover {
+    color: white;
+    text-decoration: none;
+  }
+}
+
+/* footer */
+
+footer {
+  margin-top: 45px;
+  padding-top: 20px;
+  border-top: 1px solid #eaeaea;
+  color: #999;
+  a {
+    color: #555;
+    &:hover {
+      color: #222;
+    }
+  }
+  small {
+    float: left;
+  }
+  ul {
+    float: right;
+    list-style: none;
+    li {
+      float: left;
+      margin-left: 10px;
+    }
+  }
+}
+
+#error_explanation {
+  color: #f00;
+  ul {
+    list-style: none;
+    margin: 0 0 18px 0;
+  }
+}
+
+.field_with_errors {
+  @extend .has-error;
+}
+
+
+$footer-height: 150px;
+
+html, body {
+  height: 100%;
+  font-family: Helvetica, Tahoma, Arial, STXihei, "华文细黑", "Microsoft YaHei", "微软雅黑", SimSun, "宋体", sans-serif;
+}
+
+#wrap {
+  min-height: 100%;
+  height: auto !important;
+  height: 100%;
+  margin: 0 auto 0 - $footer-height;
+
+  & + iframe { display: none; }
+}
+
+#push, footer {
+  height: $footer-height;
+  box-sizing: 'border-box';
+}
+
+footer {
+  padding-top: 20px;
+  border-top: 1px solid #DDD;
+}
+
+#content {
+  font-size: 14px;
+  border-left: 1px solid #DDD;
+  padding-top: 15px;
+
+  .list-group {
+    margin-right: -15px;
+    margin-bottom: 0px;
+
+    .list-group-item {
+      border-left: 0px;
+      border-right: 0px;
+
+      &.split {
+        padding-bottom: 8px;
+        & > * {
+          margin-top: 4px;
+          margin-bottom: 0px;
+        }
+      }
+
+      &:first-of-type {
+        padding-top: 0px;
+        border-top: 0px;
+      }
+
+      &:last-of-type {
+        border-bottom: 0px;
+      }
+    }
+  }
+}
+
+#guide {
+  font-size: 10px;
+  padding-left: 26px;
+}
+
+.simple_form {
+
 }

@@ -2,3 +2,15 @@ zh-CN:
   company: 广东青阳科技 |
   signup: 用户注册
   signin: 登录
+  PCB: 正瀚PCB
+  account: 我的帐号
+  profile: 账户信息
+  settings: 账户设置
+  signout: 注销
+  foot_com: 青阳科技 2014
+  phone_com: 客户服务热线：400-000-0000
+  address_com: 地址：广东省深圳市XXX路XXX号
+  create_label: 创建我的账户
+  create_info: 这里将注册您在本网站使用各项服务所需要的账号，为了交易安全顺利，请您尽量填写完整信息。请妥善保存您的帐号和密码
+  signin_label: 登录我的帐户
+  signin_info: 现在登录，开始下单
