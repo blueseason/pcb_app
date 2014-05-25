@@ -3,18 +3,18 @@
 
 <div class="masthead">
   <ul class="nav nav-justified">
-    <li class="active"><a href="/">首页</a></li>
-    <li><a href="#">热点新闻</a></li>
-    <li><a href="/info">信息发布</a></li>
-    <li><a href="#">商品出售</a></li>
-    <li><a href="#">联系我们</a></li>
+    <li class="active"><a href="/"><%= t('nav.home') %> </a></li>
+    <li><%= link_to t('nav.order'), createorder_path %></li>
+    <li><a href="#"><%= t('nav.news') %></a></li>
+    <li><a href="#"><%= t('nav.company') %></a></li>
+    <li><a href="#"><%= t('nav.contact') %></a></li>
   </ul>
 </div>
 
-<div class="container" style="background: url() no-repeat;background-size: 97.5% 600px;">
-<div class="jumbotron" > 
-  <h1>青阳科技</h1>
-  <p class="lead">PCB电路板网上订购平台</p>
+<div class="container" style="background: url(/assets/pcb.jpg) no-repeat; background-size: 97.5% ;">
+<div class="jumbotron" >
+  <h1 style = "color: #d5d5d5">青阳科技</h1>
+  <p class="lead text-muted">PCB电路板网上订购平台</p>
   <p><a class="btn btn-lg btn-success" href="/signup" role="button">现在注册</a></p>
 </div>
 </div>

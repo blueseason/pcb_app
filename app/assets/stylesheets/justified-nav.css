@@ -4,6 +4,9 @@
 .jumbotron {
   text-align: center;
   background-color: transparent;
+  height: 450px;
+  #background: url(/assets/pcb.jpg) no-repeat;
+  #background-size: 120%;
 }
 .jumbotron .btn {
   font-size: 21px;

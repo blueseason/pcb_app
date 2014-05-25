@@ -11,7 +11,34 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 20140522064507) do
+ActiveRecord::Schema.define(version: 20140525083814) do
+
+  create_table "orders", force: true do |t|
+    t.integer  "user_id"
+    t.decimal  "length"
+    t.decimal  "width"
+    t.integer  "layer"
+    t.integer  "amount"
+    t.integer  "pinban_style_num"
+    t.integer  "type"
+    t.integer  "thickness"
+    t.integer  "zuhan_color"
+    t.integer  "zifu_color"
+    t.integer  "hanpan_pengdu"
+    t.integer  "zuhan_cover"
+    t.integer  "test"
+    t.integer  "tongbo_thickness"
+    t.integer  "produce_time"
+    t.integer  "need_receipt"
+    t.integer  "if_in_province"
+    t.integer  "express"
+    t.decimal  "price"
+    t.string   "comment"
+    t.datetime "created_at"
+    t.datetime "updated_at"
+  end
+
+  add_index "orders", ["user_id", "created_at"], name: "index_orders_on_user_id_and_created_at"
 
   create_table "users", force: true do |t|
     t.string   "name"
@@ -33,6 +60,7 @@ ActiveRecord::Schema.define(version: 20140522064507) do
     t.integer  "level"
     t.integer  "points"
     t.string   "remember_token"
+    t.boolean  "admin",           default: false
   end
 
   add_index "users", ["email"], name: "index_users_on_email", unique: true

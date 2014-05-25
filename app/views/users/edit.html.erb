@@ -1,0 +1,39 @@
+<% provide(:title, t('edit_user')) %>
+<div class="panel panel-default">
+  <div class="panel-heading">
+    <h2 class="panel-title" ><%= yield :title %></h2>
+    <iframe id="tmp_downloadhelper_iframe" style="display: none;"></iframe>
+  </div>
+  <div class="panel-body col-md-7 col-md-offset-3">
+    <%= simple_form_for(@user, html: {  class: 'form-horizontal' }  ) do |f| %>
+      <%= render 'shared/error_messages' %>
+      <%= f.input :email, label: t('simple_form.labels.signup.email'), input_html: { size: 50 },
+          placeholder: t('simple_form.placeholders.signup.email') %>
+
+      <%= f.input :mobile, label: t('simple_form.labels.signup.mobile'),
+          placeholder: t('simple_form.placeholders.signup.mobile'), input_html: { size: 50 } %>
+
+      <%= f.input :password, label: t('simple_form.labels.signup.password'),  input_html: { size: 50 },
+          placeholder: t('simple_form.placeholders.signup.password'),
+          hint: t('simple_form.hints.signup.password') %>
+
+      <%= f.input :password_confirmation, label: t('simple_form.labels.signup.password_confirmation'), input_html: { size: 50 } %>
+
+      <%= f.input :company_name, label: t('simple_form.labels.signup.company_name') , input_html: { size: 50 }%>
+
+      <%= f.input :name, label: t('simple_form.labels.signup.contactor'), input_html: { size: 50 },  placeholder:
+          t('simple_form.placeholders.signup.contactor') %>
+
+      <%= f.input :qq, label: t('simple_form.labels.signup.qq') ,input_html: { size: 50 } %>
+
+      <%= f.input :phone, label: t('simple_form.labels.signup.phone'), input_html: { size: 50 }  %>
+
+      <%= f.input :fax, label: t('simple_form.labels.signup.fax'), input_html: { size: 50 } %>
+
+      <%= f.input :address, label: t('simple_form.labels.signup.address'), input_html: { size: 50 } %>
+
+      <%= f.button :submit, t('simple_form.labels.update.submit'), class: "btn btn-default btn-primary col-md-3" %>
+    <% end %>
+  </div>
+</div>
+</div>

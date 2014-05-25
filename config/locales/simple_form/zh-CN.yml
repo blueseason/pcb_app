@@ -1,9 +1,14 @@
 zh-CN:
   simple_form:
     hints:
+      order:
+        zuhan_cover_: 注：如是gerber文件，一律按文件加工，此选项无效！
       signup:
         password: 至少六个字符，区分大小写
     placeholders:
+      order:
+        length: 单位：cm
+        type: 小批量 FR-4 （国纪 A级料）
       signup:
         email: 例如：user@example.com
         mobile: 请输入真实手机号码
@@ -12,11 +17,31 @@ zh-CN:
         contactor: 请填写真实姓名，作为下单联系人或收货人用
         address: 作为收货地址
     labels:
+      order:
+        length: 板子长度
+        width: 板子宽度
+        layer: 板子层数
+        amount: 板子数量
+        pinban_style_num: 拼版款数
+        type: 订单类型
+        thickness: 板子厚度
+        zuhan_color: 阻焊颜色
+        zifu_color: 字符颜色
+        hanpan_pengdu: 焊盘喷镀
+        zuhan_cover: 阻焊覆盖
+        test: 测试
+        tongbo_thickness: 铜箔厚度
+        produce_time: 交货时间
+        need_receipt: 需要发票
+        calc: 计算价格
+        comment: 备注
+      update:
+        submit: 保存更改
       signin:
         email: 邮箱地址
         password: 登录密码
         submit: 登录
-        not_have_account: 还没有注帐号？
+        not_have_account: 还没有注册帐号？
         ads: 马上注册
       signup:
         email: 邮箱地址
