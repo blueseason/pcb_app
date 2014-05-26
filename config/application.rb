@@ -26,7 +26,8 @@ module PcbApp
     config.i18n.load_path += Dir[Rails.root.join('config', 'locales', '**','*.{rb,yml}')]
 
     # set default locale to something other than :en
-    config.i18n.default_locale = :"zh-CN"
+    config.i18n.enforce_available_locales = false
+    config.i18n.default_locale = :'zh-CN'
     config.i18n.available_locales = ['en', 'zh-CN']
 
     config.assets.precompile += %w(*.png *.jpg *.jpeg *.gif)
