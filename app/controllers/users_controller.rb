@@ -40,7 +40,7 @@ class UsersController < ApplicationController
     @user = User.new(user_params)    # Not the final implementation!
     if @user.save
       sign_in @user
-      flash[:success] = "欢迎注册广东青阳科技!"
+      flash[:success] = t('signup_welcome')
       redirect_to @user
     else
       render 'new'

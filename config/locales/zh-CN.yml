@@ -1,5 +1,5 @@
 zh-CN:
-  company: 广东青阳科技 |
+  company: 广东青阳科技
   signup: 用户注册
   signin: 登录
   create_order: 在线下单
@@ -19,6 +19,7 @@ zh-CN:
   signin_label: 登录我的帐户
   signin_info: 现在登录，开始下单
   edit_user: 修改用户资料
+  signup_welcome: 欢迎注册广东青阳科技!
   nav:
     home: 首页
     order: 在线下单

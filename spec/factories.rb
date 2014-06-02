@@ -10,4 +10,10 @@ FactoryGirl.define do
       admin true
     end
   end
+
+   factory :order  do
+    length 30.35
+    width  21.24
+    user
+  end
 end

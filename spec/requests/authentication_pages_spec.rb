@@ -19,7 +19,7 @@ describe "AuthenticationPages" do
 
       describe "submitting a GET request to the Users#edit action" do
         before { get edit_user_path(wrong_user) }
-        specify { expect(response.body).not_to match(full_title(t('signin_info'))) }
+        specify { expect(response.body).not_to match(full_title(I18n.t('signin_'))) }
         specify { expect(response).to redirect_to(root_url) }
       end
 
@@ -47,15 +47,13 @@ describe "AuthenticationPages" do
       describe "when attempting to visit a protected page" do
         before do
           visit edit_user_path(user)
-          fill_in "Email",    with: user.email
-          fill_in "Password", with: user.password
-          click_button "Sign in"
+          valid_signin(user)
         end
 
         describe "after signing in" do
 
           it "should render the desired protected page" do
-            expect(page).to have_title('Edit user')
+            expect(page).to have_title(I18n.t('edit_user'))
           end
         end
       end
@@ -64,7 +62,7 @@ describe "AuthenticationPages" do
 
         describe "visiting the edit page" do
           before { visit edit_user_path(user) }
-          it { should have_title('Sign in') }
+          it { should have_title(I18n.t('signin')) }
         end
 
         describe "submitting to the update action" do
@@ -74,7 +72,7 @@ describe "AuthenticationPages" do
 
         describe "visiting the user index" do
           before { visit users_path }
-          it { should have_title('Sign in') }
+          it { should have_title(I18n.t('signin')) }
         end
 
       end
@@ -85,14 +83,14 @@ describe "AuthenticationPages" do
     before { visit signin_path }
 
     describe "with invalid information" do
-      before { click_button "Sign in" }
+      before { click_button I18n.t('simple_form.labels.signin.submit') }
 
-      it { should have_title('Sign in') }
-      it { should have_selector('div.alert.alert-error') }
+      it { should have_title(I18n.t('signin')) }
+      it { should have_error_message('Invalid') }
 
       describe "after visiting another page" do
-        before { click_link "Home" }
-        it { should_not have_selector('div.alert.alert-error') }
+        before { click_link I18n.t('home') }
+        it { should_not have_error_message }
       end
     end
 
@@ -101,10 +99,10 @@ describe "AuthenticationPages" do
       before { sign_in user }
 
       it { should have_title(user.name) }
-      it { should have_link('Profile',     href: user_path(user)) }
-      it { should have_link('Settings',    href: edit_user_path(user)) }
-      it { should have_link('Sign out',    href: signout_path) }
-      it { should_not have_link('Sign in', href: signin_path) }
+      it { should have_link(I18n.t('profile'),     href: user_path(user)) }
+      it { should have_link(I18n.t('settings'),    href: edit_user_path(user)) }
+      it { should have_link(I18n.t('signout'),    href: signout_path) }
+      it { should_not have_link(I18n.t('signin'), href: signin_path) }
     end
   end
 end

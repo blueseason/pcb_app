@@ -28,8 +28,9 @@ describe User do
   it { should respond_to(:password_confirmation) }
   it { should respond_to(:remember_token) }
   it { should respond_to(:authenticate) }
-  it { should respond_to(:admin)
-
+  it { should respond_to(:admin) }
+  it { should respond_to(:orders) }
+  
   it { should be_valid }
   it { should_not be_admin }
 
@@ -41,6 +42,7 @@ describe User do
 
     it { should be_admin }
   end
+
 
   describe "remember token" do
     before { @user.save }
@@ -135,5 +137,29 @@ describe User do
   describe "with a password that's too short" do
     before { @user.password = @user.password_confirmation = "a" * 5 }
     it { should be_invalid }
+  end
+
+  describe "order associations" do
+
+    before { @user.save }
+    let!(:older_order) do
+      FactoryGirl.create(:order, user: @user, created_at: 1.day.ago)
+    end
+    let!(:newer_order) do
+      FactoryGirl.create(:order, user: @user, created_at: 1.hour.ago)
+    end
+
+    it "should have the right order in the right order" do
+      expect(@user.orders.to_a).to eq [newer_order, older_order]
+    end
+
+    it "should destroy associated orders" do
+      orders = @user.orders.to_a
+      @user.destroy
+      expect(orders).not_to be_empty
+      orders.each do |order|
+        expect(Order.where(id: order.id)).to be_empty
+      end
+    end
   end
 end
