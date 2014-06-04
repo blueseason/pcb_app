@@ -87,6 +87,10 @@ describe "User Pages" do
         fill_in I18n.t('simple_form.labels.signup.email'),                 with: new_email
         fill_in I18n.t('simple_form.labels.signup.password'),              with: user.password
         fill_in I18n.t('simple_form.labels.signup.password_confirmation'), with: user.password
+        fill_in I18n.t('simple_form.labels.signup.qq'),                    with: user.qq
+        fill_in I18n.t('simple_form.labels.signup.mobile'),                with: user.mobile
+        fill_in I18n.t('simple_form.labels.signup.address'),               with: user.address
+
         click_button I18n.t('simple_form.labels.update.submit')
       end
 

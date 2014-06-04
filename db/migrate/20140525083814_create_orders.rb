@@ -20,6 +20,7 @@ class CreateOrders < ActiveRecord::Migration
       t.integer :if_in_province
       t.integer :express
       t.decimal :price
+      t.string  :pcb_file_path
       t.string  :comment
 
       t.timestamps

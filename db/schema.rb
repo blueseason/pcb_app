@@ -33,6 +33,7 @@ ActiveRecord::Schema.define(version: 20140525083814) do
     t.integer  "if_in_province"
     t.integer  "express"
     t.decimal  "price"
+    t.string   "pcb_file_path"
     t.string   "comment"
     t.datetime "created_at"
     t.datetime "updated_at"
@@ -56,14 +57,15 @@ ActiveRecord::Schema.define(version: 20140525083814) do
     t.integer  "province"
     t.integer  "city"
     t.datetime "last_login_time"
-    t.integer  "login_count"
-    t.integer  "level"
+    t.integer  "login_count",     default: 0
+    t.integer  "level",           default: 0
     t.integer  "points"
     t.string   "remember_token"
     t.boolean  "admin",           default: false
   end
 
   add_index "users", ["email"], name: "index_users_on_email", unique: true
+  add_index "users", ["qq", "mobile"], name: "index_users_on_qq_and_mobile", unique: true
   add_index "users", ["remember_token"], name: "index_users_on_remember_token"
 
 end

@@ -18,4 +18,9 @@ class OrdersController < ApplicationController
     end
   end
 
+  private
+
+    def order_params
+      params.require(:order).permit(:lengh)
+    end
 end

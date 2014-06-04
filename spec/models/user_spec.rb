@@ -4,7 +4,8 @@ require 'spec_helper'
 describe User do
 
   before { @user = User.new(name: "王先生", email: "wang@example.com", mobile: "13818008888",
-                            password: "foobar", password_confirmation: "foobar") }
+                            qq: "1233456", real_name: "xxxx", password: "foobar",
+                            password_confirmation: "foobar", address: "xxxxx") }
 
   subject { @user }
 
@@ -30,7 +31,7 @@ describe User do
   it { should respond_to(:authenticate) }
   it { should respond_to(:admin) }
   it { should respond_to(:orders) }
-  
+
   it { should be_valid }
   it { should_not be_admin }
 

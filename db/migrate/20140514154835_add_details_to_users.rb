@@ -10,8 +10,10 @@ class AddDetailsToUsers < ActiveRecord::Migration
     add_column :users, :province, :integer
     add_column :users, :city, :integer
     add_column :users, :last_login_time, :timestamp
-    add_column :users, :login_count, :integer
-    add_column :users, :level, :integer
-    add_column :users, :points, :integer
+    add_column :users, :login_count, :integer, default: 0
+    add_column :users, :level, :integer, default: 0
+    add_column :users, :points, :integer, deault: 0
+
+    add_index :users, [:qq, :mobile], unique: true
   end
 end
