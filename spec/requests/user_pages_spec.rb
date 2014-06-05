@@ -97,7 +97,7 @@ describe "User Pages" do
       it { should have_title(new_name) }
       it { should have_selector('div.alert.alert-success') }
       it { should have_link(I18n.t('signout'), href: signout_path) }
-      specify { expect(user.reload.name).to  eq new_name }
+      specify { expect(user.reload.real_name).to  eq new_name }
       specify { expect(user.reload.email).to eq new_email }
     end
 
@@ -135,12 +135,7 @@ describe "User Pages" do
     end
 
     describe "with valid information" do
-      before do
-        fill_in I18n.t('simple_form.labels.signup.contactor'),              with: "李先生"
-        fill_in I18n.t('simple_form.labels.signup.email'),                  with: "li@example.com"
-        fill_in I18n.t('simple_form.labels.signup.password'),               with: "foobar"
-        fill_in I18n.t('simple_form.labels.signup.password_confirmation'),  with: "foobar"
-      end
+      before { valid_signup }
 
       it "should create a user" do
         expect { click_button submit }.to change(User,:count).by(1)

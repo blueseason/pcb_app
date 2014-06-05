@@ -35,3 +35,13 @@ def sign_in(user, options={})
     click_button        I18n.t('signin')
   end
 end
+
+def valid_signup()
+  fill_in I18n.t('simple_form.labels.signup.contactor'),              with: "李先生"
+  fill_in I18n.t('simple_form.labels.signup.email'),                  with: "li@example.com"
+  fill_in I18n.t('simple_form.labels.signup.password'),               with: "foobar"
+  fill_in I18n.t('simple_form.labels.signup.password_confirmation'),  with: "foobar"
+  fill_in I18n.t('simple_form.labels.signup.mobile'),                 with: "13818003456"
+  fill_in I18n.t('simple_form.labels.signup.qq'),                     with: "23445"
+  fill_in I18n.t('simple_form.labels.signup.address'),                with: "xxxxxxxx"
+end

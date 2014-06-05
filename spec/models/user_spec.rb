@@ -50,13 +50,13 @@ describe User do
     its(:remember_token) { should_not be_blank }
   end
 
-  describe "when name is not present" do
-    before { @user.name = " " }
+  describe "when real_name is not present" do
+    before { @user.real_name = " " }
     it { should_not be_valid }
   end
 
-  describe "when name is too long" do
-    before { @user.name = '网' * 51 }
+  describe "when real_name is too long" do
+    before { @user.real_name = '网' * 51 }
     it { should_not be_valid }
   end
 

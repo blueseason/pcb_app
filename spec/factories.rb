@@ -1,10 +1,11 @@
 # -*- coding: utf-8 -*-
 FactoryGirl.define do
   factory :user do
-    sequence(:name)  { |n| "Person #{n}" }
+    sequence(:real_name)  { |n| "Person #{n}" }
     sequence(:email) { |n| "person_#{n}@example.com"}
-    mobile  13818000001
-    real_name "xxxx"
+    sequence(:mobile)  { |n| "138180000#{n+10}" }
+    qq      "1234"
+    #real_name "xxxx"
     address "real address"
     password "foobar"
     password_confirmation "foobar"
