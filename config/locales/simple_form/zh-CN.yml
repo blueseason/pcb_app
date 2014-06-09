@@ -18,6 +18,29 @@ zh-CN:
         address: 作为收货地址
     labels:
       order:
+        modal:
+          upload: 上传PCB文件
+          file: 请选择上传图片
+          hint: 请先压缩pcb文件再上传,支持.zip .rar
+        calc_info: 订单信息
+        fee:
+          kdds: 快递代收
+          wlzf: 网络支付
+          gc: 工程费
+          pb: 拼版费
+          ban: 板费
+          fl: 菲林费
+          tax: 税费
+          pd: 喷镀费
+          test: 测试费
+          jj: 加急费
+          color: 颜色费
+        create_time: 下单时间
+        id: 订单编号
+        step1: 1.填写订单
+        step2: 2.计算价格
+        confirm: 上传PCB文件并保存定单
+        back: 返回修改
         length: 板子长度
         width: 板子宽度
         layer: 板子层数
@@ -33,6 +56,7 @@ zh-CN:
         tongbo_thickness: 铜箔厚度
         produce_time: 交货时间
         need_receipt: 需要发票
+        express: 快递公司
         calc: 计算价格
         comment: 备注
       update:

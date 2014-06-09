@@ -1,7 +1,7 @@
 PcbApp::Application.routes.draw do
   resources :users
   resources :sessions, only: [:new, :create, :destroy]
-  resources :orders, only: [:create]
+  resources :orders, only: [:create, :calc]
 
   root to: 'static_pages#home'
 
@@ -9,6 +9,7 @@ PcbApp::Application.routes.draw do
   match '/signin', to: 'sessions#new',    via: 'get'
   match '/signout',to: 'sessions#destroy', via: 'delete'
   match '/createorder', to: 'orders#new',  via: 'get'
+  match '/calcorder',  to: 'orders#calc', via: 'get'
   match '/help',   to: 'static_pages#help', via: 'get'
 
   # The priority is based upon order of creation: first created -> highest priority.

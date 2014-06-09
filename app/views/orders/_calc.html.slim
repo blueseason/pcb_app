@@ -1,0 +1,102 @@
+h2 = t('simple_form.labels.order.step2')
+
+  p.alert.alert-info
+    = t('views.my_orders.orders_filtered')
+    = ', '
+    = link_to t('views.my_orders.view_all_orders'), user_orders_path
+
+.bs-example
+  table.table.table-striped.table-bordered.bootstrap-datatable.datatable
+    thead
+        th = t('simple_form.labels.order.calc_info')
+    tbody
+      tr
+        td = t('simple_form.labels.order.length')
+        td = @order.length
+      tr
+        td = t('simple_form.labels.order.width')
+        td = @order.width
+        td = t('simple_form.labels.order.layer')
+        td = @order.layer
+        td = t('simple_form.labels.order.amount')
+        td = @order.amount
+      tr
+        td = t('simple_form.labels.order.pinban_style_num')
+        td = @order.pinban_style_num
+        td = t('simple_form.labels.order.type')
+        td = t('simple_form.placeholders.order.type')
+        td = t('simple_form.labels.order.thickness')
+        td = @order.thickness
+      tr
+        td = t('simple_form.labels.order.zuhan_color')
+        td = @order.zuhan_color
+        td = t('simple_form.labels.order.zifu_color')
+        td = @order.zifu_color
+        td = t('simple_form.labels.order.hanpan_pengdu')
+        td = @order.hanpan_pengdu
+      tr
+        td = t('simple_form.labels.order.zuhan_cover')
+        td = @order.zuhan_cover
+        td = t('simple_form.labels.order.test')
+        td = @order.test
+        td = t('simple_form.labels.order.tongbo_thickness')
+        td = @order.tongbo_thickness
+      tr
+        td = t('simple_form.labels.order.produce_time')
+        td = @order.produce_time
+        td = t('simple_form.labels.order.express')
+        td = @order.express
+        td = t('simple_form.labels.order.comment')
+        td = @order.comment
+
+.bs-example
+  table.table.table-striped.table-bordered.bootstrap-datatable.datatable
+    thead
+      tr
+        th = t('simple_form.labels.order.fee.kdds')
+      tr
+        th = t('simple_form.labels.order.fee.gc')
+        th = t('simple_form.labels.order.fee.pb')
+        th = t('simple_form.labels.order.fee.ban')
+        th = t('simple_form.labels.order.fee.fl')
+        th = t('simple_form.labels.order.fee.tax')
+        th = t('simple_form.labels.order.fee.pd')
+        th = t('simple_form.labels.order.fee.test')
+        th = t('simple_form.labels.order.fee.jj')
+        th = t('simple_form.labels.order.fee.color')
+        th = t('simple_form.labels.order.fee.gc')
+
+.bs-example
+  table.table.table-striped.table-bordered.bootstrap-datatable.datatable
+    thead
+      tr
+        th = t('simple_form.labels.order.fee.wlzf')
+      tr
+        th = t('simple_form.labels.order.fee.gc')
+        th = t('simple_form.labels.order.fee.pb')
+        th = t('simple_form.labels.order.fee.ban')
+        th = t('simple_form.labels.order.fee.fl')
+        th = t('simple_form.labels.order.fee.tax')
+        th = t('simple_form.labels.order.fee.pd')
+        th = t('simple_form.labels.order.fee.test')
+        th = t('simple_form.labels.order.fee.jj')
+        th = t('simple_form.labels.order.fee.color')
+        th = t('simple_form.labels.order.fee.gc')
+
+button.btn.btn-primary data-toggle="modal" data-target="#uploadPcb"type="submit" = t('simple_form.labels.order.confirm')
+button.btn.col-md-offset-1  = t('simple_form.labels.order.back')
+
+#uploadPcb.modal.fade { tabindex = "-1" role = "dialog" aria-labellebdy = "myModalLabel" aria-hidden = "true" }
+  .modal-dialog
+    .modal-content
+      .modal-header
+        button{type = "button" class = "close" data-dismiss = "modal" aria-hidden = "true"} &times
+        h3.modal-title#myModalLabel =t('simple_form.labels.order.modal.upload')
+      .modal-body
+        .form-group
+          .lable for="uploadFile" =t('simple_form.labels.order.modal.file')
+          .input type="file" id="uploadFile"
+          p.help-block = t('simple_form.labels.order.modal.hint')
+      .modal-footer
+        button{class = "btn" data-dismiss = "modal" aria-hidden = "true"} 关闭
+        button{class = "btn btn-primary"} 确认

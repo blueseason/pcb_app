@@ -11,69 +11,7 @@
       </div>
       <div class="col-md-9" id="content">
         <div class="panel-body col-md-9 ">
-          <%= simple_form_for(@order, html: {  class: 'form-horizontal' }) do |f| %>
-          <%= f.input :length, label: t('simple_form.labels.order.length'),
-              placeholder: t('simple_form.placeholders.order.length'),
-              label_html: { class: 'col-md-3' } %>
-
-          <%= f.input :width, label: t('simple_form.labels.order.width'),
-              placeholder: t('simple_form.placeholders.order.length'),
-              label_html: { class: 'col-md-3' } %>
-
-          <%= f.input :layer, as: :radio_buttons, label: t('simple_form.labels.order.layer'),
-              collection: ["1", "2", "4", "6"],  :item_wrapper_class => "radio-inline",
-              label_html: { class: 'col-md-3' } %>
-
-          <%= f.input :amount, label: t('simple_form.labels.order.amount'),
-              label_html: { class: 'col-md-3' } %>
-
-          <%= f.input :pinban_style_num, label: t('simple_form.labels.order.pinban_style_num'),
-              label_html: { class: 'col-md-3' } %>
-
-          <%= f.input :type, label: t('simple_form.labels.order.type'),
-              placeholder: t('simple_form.placeholders.order.type'),  :readonly => true,
-              label_html: { class: 'col-md-3' } %>
-
-          <%= f.input :thickness, as: :radio_buttons, label: t('simple_form.labels.order.thickness'),
-              collection: ["0.4", "0.6", "0.8", "1.0", "1.2", "1.6", "2.0"],  :item_wrapper_class => "radio-inline",
-              label_html: { class: 'col-md-3' } %>
-
-          <%= f.input :zuhan_color, as: :radio_buttons, label: t('simple_form.labels.order.zuhan_color'),
-              collection: ["绿色", "红色", "黄色", "蓝色", "白色", "黑色", "无"],  :item_wrapper_class => "radio-inline",
-              label_html: { class: 'col-md-3' } %>
-
-          <%= f.input :zifu_color, as: :radio_buttons, label: t('simple_form.labels.order.zifu_color'),
-              collection: ["白色", "黑色", "无"],  :item_wrapper_class => "radio-inline",
-              label_html: { class: 'col-md-3' } %>
-
-          <%= f.input :hanpan_pengdu, as: :radio_buttons, label: t('simple_form.labels.order.hanpan_pengdu'),
-              collection: ["过孔盖油 ", "过孔开窗"],  :item_wrapper_class => "radio-inline",
-              label_html: { class: 'col-md-3' } %>
-
-          <%= f.input :zuhan_cover, as: :radio_buttons, label: t('simple_form.labels.order.zuhan_cover'),
-              collection: ["有铅喷锡", "无铅喷锡", "沉金"], :item_wrapper_class => "radio-inline",
-              label_html: { class: 'col-md-3' } %>
-
-          <%= f.input :test, as: :radio_buttons, label: t('simple_form.labels.order.test'),
-              collection: ["全部测试", "不测试"], :item_wrapper_class => "radio-inline",
-              label_html: { class: 'col-md-3' } %>
-
-          <%= f.input :tongbo_thickness, as: :radio_buttons, label: t('simple_form.labels.order.tongbo_thickness'),
-              collection: ["1/1oz", "2/2oz"], :item_wrapper_class => "radio-inline",
-              label_html: { class: 'col-md-3' } %>
-
-          <!--%= f.input :produce_time, as: :grouped_select, label: t('simple_form.labels.order.produce_time'),
-              collection: ["全部测试", "不测试"], label_html: { class: 'col-md-3' } %-->
-
-          <%= f.input :need_receipt, as: :radio_buttons, label: t('simple_form.labels.order.need_receipt'),
-              collection: ["不需要", "普通发票"," 增值税发票"], :item_wrapper_class => "radio-inline",
-              label_html: { class: 'col-md-3' } %>
-
-          <%= f.input :comment, as: :text, label: t('simple_form.labels.order.comment'),
-              label_html: { class: 'col-md-3' } %>
-
-            <%= f.button :submit, t('simple_form.labels.order.calc'), class: "btn btn-default btn-primary col-md-3" %>
-          <% end %>
+             <%= render 'create_form' %>
         </div>
       </div>
     </div>
