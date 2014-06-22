@@ -8,6 +8,7 @@ zh-CN:
   PCB: 正瀚PCB
   account: 我的帐号
   profile: 账户信息
+  users: 用户管理
   home: 首页
   settings: 账户设置
   signout: 注销
@@ -19,6 +20,7 @@ zh-CN:
   signin_label: 登录我的帐户
   signin_info: 现在登录，开始下单
   edit_user: 修改用户资料
+  edit_label: 编辑用户基本资料
   signup_welcome: 欢迎注册广东青阳科技!
   nav:
     home: 首页
@@ -27,5 +29,32 @@ zh-CN:
     company: 公司简介
     contact: 联系我们
   user:
+    home: 我的账户
+    grade: 我的等级
+    points: 我的积分
+    last_login: 上次登录时间
+    display: 用户信息
+    order_display: 订单详情
+    info_menu:
+      main: 账户信息
+      basic: 基本信息
+      order: 订单管理
+      create_order: 创建订单
+      check_old_order: 查看订单
+    table:
+      head:
+        oid: 订单编号
+        create_date: 下单时间
+        price: 价格
+        status: 状态
+        action: 动作
     update_profile_succ: 用户资料更新成功
     singin_notice: 请先登录
+  express:
+    in_province: 广东省内
+    out_province: 广东省外
+    v1: 联昊通或速尔快递免邮费
+    v2: 顺丰到付
+    v3: 其他快递到付
+    v4: 顺丰到付
+    v5: 其他快递到付

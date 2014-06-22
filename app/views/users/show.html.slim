@@ -1,0 +1,120 @@
+= provide(:title, @user.name)
+h3 class="center" = t('user.home')
+
+.container-fluid
+  .row-fluid
+    .col-md-2.main-menu-span
+      .well.nav-collapse.sidebar-nav
+        ul class="nav nav-tabs nav-stacked main-menu"
+          li class="nav-header hidden-tablet" = t('user.info_menu.main')
+          li
+            = link_to "#", "data-toggle" => "modal", "data-target" => "#showUser", type: "submit" do
+              span class="glyphicon glyphicon-home"
+              = " #{t('user.info_menu.basic')}"
+
+          li class="nav-header hidden-tablet" = t('user.info_menu.order')
+          li
+            = link_to current_user do
+              span class="glyphicon glyphicon-eye-open"
+              = " #{t('user.info_menu.check_old_order')}"
+          li
+            a href="/createorder"
+              span class="glyphicon glyphicon-edit"
+              = " #{t('user.info_menu.create_order')}"
+
+    #content.col-md-10
+      .row-fluid.sortable
+        .box.span12
+          .box-header.well
+            h2
+              span class="glyphicon glyphicon-user"
+              = " #{@user.real_name}"
+            .box-glyphicon.glyphicon
+              ul class="list-group"
+                li class="list-group-item"
+                  span  class="glyphicon  glyphicon-pushpin"
+                  = " #{t('user.grade')}:  #{@user.level}  "
+                li class="list-group-item"
+                  span  class="glyphicon glyphicon-star"
+                  = " #{t('user.points')}:  #{@user.points} "
+                li class="list-group-item"
+                  span  class="glyphicon glyphicon-time"
+                  = " #{t('user.last_login')}:  #{@user.last_login_time}"
+
+          .box-content
+            h4 历史订单信息
+
+            table.table.table-striped.table-bordered.bootstrap-datatable.datatable
+              thead
+                tr
+                  th class="center" = t('user.table.head.oid')
+                  th class="center" = t('user.table.head.create_date')
+                  th class="center" = t('user.table.head.price')
+                  th class="center" = t('user.table.head.status')
+                  th class="center" = t('user.table.head.action')
+              tbody
+                - @orders.each do |order|
+                  tr
+                    td class="center" = order.id
+                    td class="center" = order.created_at
+                    td class="center" = order.price
+                    td class="center"
+                      span class="label #{getValue('status_class_tag', order.status)}"
+                        = getValue("status_value", order.status)
+                    td class="center"
+                      = link_to order_path(:id => order.id), 'data-target' =>  "#showOrder", 'data-backdrop' => true, 'data-keyboard' => true, remote: true, class: "btn btn-success" do
+                        i class="glyphicon glyphicon-zoom-in glyphicon glyphicon-white"  查看
+                      a class="btn btn-info" href="#"
+                        i class="glyphicon glyphicon-tag glyphicon glyphicon-white"  修改
+                      = link_to pay_order_path(:id => order.id),  method: 'get', class: "btn btn-danger" do
+                        i  class="glyphicon glyphicon-usd glyphicon glyphicon-white"  支付
+            = will_paginate @orders
+
+#showUser.modal.fade { tabindex = "-1" role = "dialog" aria-labellebdy = "myModalLabel" aria-hidden = "true" }
+  .modal-dialog
+    .modal-content
+      .modal-header
+        button{type = "button" class = "close" data-dismiss = "modal" aria-hidden = "true"} &times
+        h3.modal-title#myModalLabel =t('user.display')
+      .modal-body
+        table.table.table-bordered.bootstrap-datatable.datatable
+          tbody
+            tr
+              td width="30%" = t('simple_form.labels.signup.email')
+              td = @user.email
+            tr
+              td = t('simple_form.labels.signup.mobile')
+              td = @user.mobile
+            tr
+              td = t('simple_form.labels.signup.company_name')
+              td = @user.company_name
+            tr
+              td = t('simple_form.labels.signup.contactor')
+              td = @user.real_name
+            tr
+              td = t('simple_form.labels.signup.qq')
+              td = @user.qq
+            tr
+              td = t('simple_form.labels.signup.phone')
+              td = @user.phone
+            tr
+              td = t('simple_form.labels.signup.fax')
+              td = @user.fax
+            tr
+              td = t('simple_form.labels.signup.address')
+              td = @user.address
+
+
+      .modal-footer
+        button{class = "btn btn-primary" data-dismiss = "modal" aria-hidden = "true"} 关闭
+
+#showOrder.modal.fade { tabindex = "-1" role = "dialog" aria-labellebdy = "myModalLabel1" aria-hidden = "true" }
+  .modal-dialog
+    .modal-content
+      .modal-header
+        button{type = "button" class = "close" data-dismiss = "modal" aria-hidden = "true"} &times
+        h3.modal-title#myModalLabel1 =t('user.order_display')
+      #order.modal-body
+      .modal-footer
+        button{class = "btn btn-primary" data-dismiss = "modal" aria-hidden = "true"} 关闭
+

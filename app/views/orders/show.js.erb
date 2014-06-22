@@ -1,0 +1,4 @@
+$modal = $('#showOrder'),
+$modalBody = $('#order.modal-body'),
+$modalBody.html("<%= escape_javascript(render @order) %>");
+$modal.modal();

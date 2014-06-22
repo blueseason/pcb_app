@@ -18,8 +18,8 @@ ActiveRecord::Schema.define(version: 20140525083814) do
     t.decimal  "length"
     t.decimal  "width"
     t.integer  "layer"
-    t.integer  "amount",           default: 0
-    t.integer  "pinban_style_num", default: 1
+    t.integer  "amount",                      default: 0
+    t.integer  "pinban_style_num",            default: 1
     t.integer  "type"
     t.decimal  "thickness"
     t.integer  "zuhan_color"
@@ -32,11 +32,14 @@ ActiveRecord::Schema.define(version: 20140525083814) do
     t.integer  "need_receipt"
     t.integer  "if_in_province"
     t.integer  "express"
-    t.decimal  "price",            default: 0.0
+    t.string   "express_no"
+    t.decimal  "price",                       default: 0.0
     t.string   "pcb_file_path"
     t.string   "comment"
-    t.integer  "pay_type",         default: 0
-    t.string   "pay_id"
+    t.integer  "pay_type",                    default: 0
+    t.string   "pay_id",           limit: 16
+    t.integer  "pay_status"
+    t.integer  "status",                      default: 1
     t.datetime "created_at"
     t.datetime "updated_at"
   end

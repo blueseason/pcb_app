@@ -1,0 +1,56 @@
+table.table.table-bordered.bootstrap-datatable.datatable
+  tbody
+    tr
+      td width="30%" = t('simple_form.labels.order.id')
+      td = @order.id
+    tr
+      td = t('simple_form.labels.order.create_time')
+      td = @order.created_at
+    tr
+      td = t('simple_form.labels.order.length')
+      td = @order.length
+    tr
+      td = t('simple_form.labels.order.width')
+      td = @order.width
+    tr
+      td = t('simple_form.labels.order.layer')
+      td = @order.layer
+    tr
+      td = t('simple_form.labels.order.amount')
+      td = @order.amount
+    tr
+      td = t('simple_form.labels.order.pinban_style_num')
+      td = @order.pinban_style_num
+    tr
+      td = t('simple_form.labels.order.type')
+      td = t('simple_form.placeholders.order.type')
+    tr
+      td = t('simple_form.labels.order.thickness')
+      td = @order.thickness
+    tr
+      td = t('simple_form.labels.order.zuhan_color')
+      td = getValue("zh_color",@order.zuhan_color)
+    tr
+      td = t('simple_form.labels.order.zifu_color')
+      td = @order.zifu_color
+    tr
+      td = t('simple_form.labels.order.hanpan_pengdu')
+      td = @order.hanpan_pengdu
+    tr
+      td = t('simple_form.labels.order.zuhan_cover')
+      td = @order.zuhan_cover
+    tr
+      td = t('simple_form.labels.order.test')
+      td = @order.test
+    tr
+      td = t('simple_form.labels.order.tongbo_thickness')
+      td = @order.tongbo_thickness
+    tr
+      td = t('simple_form.labels.order.produce_time')
+      td = @order.produce_time
+    tr
+      td = t('simple_form.labels.order.express')
+      td = @order.express
+    tr
+      td = t('simple_form.labels.order.comment')
+      td = @order.comment

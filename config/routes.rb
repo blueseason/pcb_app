@@ -1,7 +1,7 @@
 PcbApp::Application.routes.draw do
   resources :users
   resources :sessions, only: [:new, :create, :destroy]
-  resources :orders, only: [:create, :calc]
+  resources :orders, only: [:create]
 
   root to: 'static_pages#home'
 
@@ -11,6 +11,17 @@ PcbApp::Application.routes.draw do
   match '/createorder', to: 'orders#new',  via: 'get'
   match '/calcorder',  to: 'orders#calc', via: 'get'
   match '/help',   to: 'static_pages#help', via: 'get'
+  match '/upload', to: "orders#upload",       via: 'post'
+  #match '/pay', to: 'orders#pay', via: 'get'
+
+  resources :orders do
+    member do
+      get 'pay'
+      get 'upload'
+      get 'alipay_done'
+      post 'alipay_notify'
+    end
+  end
 
   # The priority is based upon order of creation: first created -> highest priority.
   # See how all your routes lay out with "rake routes".

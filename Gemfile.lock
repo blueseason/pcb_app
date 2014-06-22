@@ -1,3 +1,9 @@
+GIT
+  remote: git://github.com/chloerei/alipay.git
+  revision: 89f0f5d266f05af7e7f8f30fc5cdfb5ff16c4bcc
+  specs:
+    alipay (0.1.0)
+
 GEM
   remote: https://rubygems.org/
   specs:
@@ -209,6 +215,7 @@ PLATFORMS
   ruby
 
 DEPENDENCIES
+  alipay!
   bcrypt-ruby
   bootstrap-sass (= 3.1.1)
   bootstrap-will_paginate (= 0.0.9)

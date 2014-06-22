@@ -34,11 +34,14 @@ class UsersController < ApplicationController
 
   def show
     @user = User.find(params[:id])
+    @orders = @user.orders.paginate(page: params[:page])
   end
 
   def create
     @user = User.new(user_params)    # Not the final implementation!
     if @user.save
+      @user.login_count = 0
+      @user.last_login_time= @user.created_at
       sign_in @user
       flash[:success] = t('signup_welcome')
       redirect_to @user

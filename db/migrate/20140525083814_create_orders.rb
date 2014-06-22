@@ -19,11 +19,14 @@ class CreateOrders < ActiveRecord::Migration
       t.integer :need_receipt
       t.integer :if_in_province
       t.integer :express
+      t.string  :express_no
       t.decimal :price, default: 0
       t.string  :pcb_file_path
       t.string  :comment
       t.integer :pay_type, default: 0
-      t.string  :pay_id
+      t.string  :pay_id, limit: 16
+      t.integer :pay_status
+      t.integer :status, default: 1
 
       t.timestamps
     end

@@ -8,7 +8,7 @@ zh-CN:
     placeholders:
       order:
         length: 单位：cm
-        type: 小批量 FR-4 （国纪 A级料）
+        type: 小批量 FR-4（国纪 A级料）
       signup:
         email: 例如：user@example.com
         mobile: 请输入真实手机号码
@@ -18,9 +18,14 @@ zh-CN:
         address: 作为收货地址
     labels:
       order:
+        form:
+          add: 选择文件
+          upload: 开始上传
+          cancel: 取消上传
+          delete: 删除文件
         modal:
           upload: 上传PCB文件
-          file: 请选择上传图片
+          file: 请选择上传PCB文件
           hint: 请先压缩pcb文件再上传,支持.zip .rar
         calc_info: 订单信息
         fee:
